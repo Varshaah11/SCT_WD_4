@@ -32,8 +32,11 @@
 ## 📁 Project Structure
 
 SCT_WD_4/
+
 ├── index.html # Application UI and content structure
+
 ├── styles.css # All styling for the to-do app
+
 └── script.js # Business logic and interactivity
 
 
