@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoBuddy - Your Task Companion</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Enhanced Animated Background -->
+    <div class="bg-animation">
+        <!-- Original floating shapes -->
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+        <div class="floating-shape shape-4"></div>
+        <div class="floating-shape shape-5"></div>
+        
+        <!-- New geometric shapes -->
+        <div class="geometric-shape geo-triangle"></div>
+        <div class="geometric-shape geo-square"></div>
+        <div class="geometric-shape geo-hexagon"></div>
+        
+        <!-- Particle system -->
+        <div class="particle particle-1"></div>
+        <div class="particle particle-2"></div>
+        <div class="particle particle-3"></div>
+        <div class="particle particle-4"></div>
+        <div class="particle particle-5"></div>
+        
+        <!-- Aurora effects -->
+        <div class="aurora"></div>
+        <div class="aurora aurora-2"></div>
+        
+        <!-- Cosmic grid -->
+        <div class="cosmic-grid"></div>
+        
+        <!-- Advanced particles system -->
+        <div class="advanced-particles">
+            <div class="sparkle sparkle-1"></div>
+            <div class="sparkle sparkle-2"></div>
+            <div class="sparkle sparkle-3"></div>
+            <div class="sparkle sparkle-4"></div>
+            <div class="sparkle sparkle-5"></div>
+            <div class="sparkle sparkle-6"></div>
+            <div class="sparkle sparkle-7"></div>
+            <div class="sparkle sparkle-8"></div>
+            <div class="sparkle sparkle-9"></div>
+            <div class="sparkle sparkle-10"></div>
+            <div class="sparkle sparkle-11"></div>
+            <div class="sparkle sparkle-12"></div>
+            <div class="sparkle sparkle-13"></div>
+            <div class="sparkle sparkle-14"></div>      
+            <div class="sparkle sparkle-15"></div>
+            <div class="sparkle sparkle-16"></div>
+        </div>
+        
+        <!-- Energy waves -->
+        <div class="energy-wave wave-1"></div>
+        <div class="energy-wave wave-2"></div>
+        <div class="energy-wave wave-3"></div>
+        
+        <!-- DNA helix effect -->
+        <div class="dna-helix"></div>
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="brand">
+                <div class="logo">
+                    <div class="logo-icon">🚀</div>
+                    <h1 data-text="DoBuddy">DoBuddy</h1>
+                </div>
+                <p>Your Intelligent Task Companion</p>
+                <div class="zen-quote" id="zenQuote">
+                    "The journey of a thousand tasks begins with a single click."
+                </div>
+            </div>
+            <div class="stats-container">
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number" id="totalTasks">0</div>
+                        <div class="stat-label">Total</div>
+                        <div class="stat-bar">
+                            <div class="stat-fill" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="completedTasks">0</div>
+                        <div class="stat-label">Completed</div>
+                        <div class="stat-bar">
+                            <div class="stat-fill stat-fill-success" id="completedBar" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="pendingTasks">0</div>
+                        <div class="stat-label">Pending</div>
+                        <div class="stat-bar">
+                            <div class="stat-fill stat-fill-warning" id="pendingBar" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="productivityScore">0%</div>
+                        <div class="stat-label">Productivity</div>
+                        <div class="stat-bar">
+                            <div class="stat-fill stat-fill-gradient" id="productivityBar" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Quick Add Task -->
+        <div class="quick-add-section">
+            <div class="quick-add-container">
+                <form id="taskForm" class="task-form">
+                    <div class="input-group">
+                        <div class="input-wrapper">
+                            <input type="text" id="taskInput" placeholder="What task needs your attention today?" required>
+                            <div class="input-glow"></div>
+                        </div>
+                        <div class="form-controls">
+                            <select id="listSelect" class="buddy-select">
+                                <option value="personal">🏠 Personal</option>
+                                <option value="work">💼 Work</option>
+                                <option value="health">🏃‍♂️ Health</option>
+                                <option value="learning">📚 Learning</option>
+                                <option value="creative">🎨 Creative</option>
+                                <option value="urgent">⚡ Urgent</option>
+                            </select>
+                            <select id="prioritySelect" class="buddy-select">
+                                <option value="low">🌱 Low</option>
+                                <option value="medium">🌿 Medium</option>
+                                <option value="high">🔥 High</option>
+                                <option value="critical">⚡ Critical</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="datetime-row">
+                        <input type="date" id="taskDate" class="buddy-input">
+                        <input type="time" id="taskTime" class="buddy-input">
+                        <button type="submit" class="add-btn">
+                            <span class="btn-text">Add Task</span>
+                            <div class="btn-ripple"></div>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Smart Filters -->
+        <div class="filters-section">
+            <div class="filters-container">
+                <div class="filter-group">
+                    <div class="filter-label">Task View</div>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">
+                            <span class="filter-icon">🌍</span>
+                            All Tasks
+                        </button>
+                        <button class="filter-btn" data-filter="pending">
+                            <span class="filter-icon">⏳</span>
+                            In Progress
+                        </button>
+                        <button class="filter-btn" data-filter="completed">
+                            <span class="filter-icon">✅</span>
+                            Completed
+                        </button>
+                        <button class="filter-btn" data-filter="overdue">
+                            <span class="filter-icon">🔴</span>
+                            Needs Attention
+                        </button>
+                        <button class="filter-btn" data-filter="today">
+                            <span class="filter-icon">📅</span>
+                            Today
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="advanced-controls">
+                    <select id="listFilter" class="buddy-select">
+                        <option value="all">All Categories</option>
+                        <option value="personal">🏠 Personal</option>
+                        <option value="work">💼 Work</option>
+                        <option value="health">🏃‍♂️ Health</option>
+                        <option value="learning">📚 Learning</option>
+                        <option value="creative">🎨 Creative</option>
+                        <option value="urgent">⚡ Urgent</option>
+                    </select>
+                    
+                    <div class="action-buttons">
+                        <button id="clearCompleted" class="action-btn danger">
+                            <span>🗑️</span>
+                            Clear Done
+                        </button>
+                        <button id="exportTasks" class="action-btn info">
+                            <span>📤</span>
+                            Export
+                        </button>
+                        <input type="file" id="importFile" accept=".json" style="display: none;">
+                        <button id="importTasks" class="action-btn success">
+                            <span>📥</span>
+                            Import
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Stats Dashboard -->
+        <div class="quick-stats-section">
+            <div class="quick-stats-container">
+                <div class="quick-stats-header">
+                    <h3>📊 Quick Insights</h3>
+                </div>
+                <div class="quick-stats-grid">
+                    <div class="quick-stat-card">
+                        <div class="quick-stat-icon">🔥</div>
+                        <div class="quick-stat-info">
+                            <div class="quick-stat-number" id="streakDays">0</div>
+                            <div class="quick-stat-label">Day Streak</div>
+                        </div>
+                    </div>
+                    <div class="quick-stat-card">
+                        <div class="quick-stat-icon">⚡</div>
+                        <div class="quick-stat-info">
+                            <div class="quick-stat-number" id="todayTasks">0</div>
+                            <div class="quick-stat-label">Today's Tasks</div>
+                        </div>
+                    </div>
+                    <div class="quick-stat-card">
+                        <div class="quick-stat-icon">🎯</div>
+                        <div class="quick-stat-info">
+                            <div class="quick-stat-number" id="weeklyGoal">0%</div>
+                            <div class="quick-stat-label">Weekly Goal</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tasks Container -->
+        <div class="tasks-section">
+            <div class="tasks-header">
+                <h2>Your Task Dashboard</h2>
+                <div class="view-controls">
+                    <button id="viewGrid" class="view-btn active">
+                        <span>⊞</span>
+                    </button>
+                    <button id="viewList" class="view-btn">
+                        <span>☰</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div id="tasksList" class="tasks-container">
+                <!-- Tasks will be dynamically added here -->
+            </div>
+            
+            <div id="emptyState" class="empty-state">
+                <div class="empty-animation">
+                    <div class="buddy-circle"></div>
+                    <div class="buddy-dot"></div>
+                </div>
+                <h3>Ready to get productive?</h3>
+                <p>Add your first task and let DoBuddy help you stay organized</p>
+                <button class="empty-cta" onclick="document.getElementById('taskInput').focus()">
+                    Start Adding Tasks
+                </button>
+            </div>
+        </div>
+
+        <!-- Enhanced Pomodoro Timer -->
+        <div class="pomodoro-section">
+            <div class="pomodoro-container">
+                <div class="pomodoro-header">
+                    <h3>🍅 Focus Timer</h3>
+                    <div class="timer-modes">
+                        <button class="timer-mode active" data-mode="focus">Focus</button>
+                        <button class="timer-mode" data-mode="short">Short Break</button>
+                        <button class="timer-mode" data-mode="long">Long Break</button>
+                    </div>
+                </div>
+                <div class="timer-display">
+                    <div class="timer-circle">
+                        <div class="timer-progress"></div>
+                        <div class="timer-time" id="timerDisplay">25:00</div>
+                    </div>
+                </div>
+                <div class="timer-controls">
+                    <button id="timerStart" class="timer-btn primary">
+                        <span>▶️</span> Start
+                    </button>
+                    <button id="timerPause" class="timer-btn secondary" disabled>
+                        <span>⏸️</span> Pause
+                    </button>
+                    <button id="timerReset" class="timer-btn tertiary">
+                        <span>🔄</span> Reset
+                    </button>
+                </div>
+                <div class="timer-stats">
+                    <div class="timer-stat">
+                        <div class="timer-stat-number" id="sessionsCompleted">0</div>
+                        <div class="timer-stat-label">Sessions</div>
+                    </div>
+                    <div class="timer-stat">
+                        <div class="timer-stat-number" id="totalFocusTime">0h</div>
+                        <div class="timer-stat-label">Focus Time</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Edit Task Modal -->
+        <div id="editModal" class="modal">
+            <div class="modal-backdrop"></div>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>✏️ Edit Your Task</h3>
+                    <button class="close-btn" id="closeModal">
+                        <span>✕</span>
+                    </button>
+                </div>
+                <form id="editTaskForm" class="edit-form">
+                    <div class="form-group">
+                        <label for="editTaskText">📝 Task Description</label>
+                        <input type="text" id="editTaskText" class="buddy-input" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="editTaskList">📂 Category</label>
+                            <select id="editTaskList" class="buddy-select">
+                                <option value="personal">🏠 Personal</option>
+                                <option value="work">💼 Work</option>
+                                <option value="health">🏃‍♂️ Health</option>
+                                <option value="learning">📚 Learning</option>
+                                <option value="creative">🎨 Creative</option>
+                                <option value="urgent">⚡ Urgent</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="editTaskPriority">⭐ Priority</label>
+                            <select id="editTaskPriority" class="buddy-select">
+                                <option value="low">🌱 Low</option>
+                                <option value="medium">🌿 Medium</option>
+                                <option value="high">🔥 High</option>
+                                <option value="critical">⚡ Critical</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="editTaskDate">📅 Date</label>
+                            <input type="date" id="editTaskDate" class="buddy-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="editTaskTime">⏰ Time</label>
+                            <input type="time" id="editTaskTime" class="buddy-input">
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn-cancel" id="cancelEdit">
+                            <span>❌</span> Cancel
+                        </button>
+                        <button type="submit" class="btn-save">
+                            <span>💾</span> Save Changes
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span>🚀 DoBuddy</span>
+                    <p>Your intelligent task companion for maximum productivity</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#features">Features</a>
+                    <a href="#privacy">Privacy</a>
+                    <a href="#support">Support</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DoBuddy. Built for productivity enthusiasts worldwide. ✨</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Enhanced Toast Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <!-- Progress Indicator -->
+    <div id="progressIndicator" class="progress-indicator">
+        <div class="progress-bar"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
