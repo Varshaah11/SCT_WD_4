@@ -1,6 +1,6 @@
 # SCT_WD_4
 
-🌐 **DoBuddy: A To-Do Application**
+🌐 **DoBuddy: To-Do Application**
 
 ## 📋 Project Overview
 
@@ -31,14 +31,12 @@
 
 ## 📁 Project Structure
 
+```
 SCT_WD_4/
-
-├── index.html # Application UI and content structure
-
-├── styles.css # All styling for the to-do app
-
-└── script.js # Business logic and interactivity
-
+├── index.html       # Application UI and content structure
+├── styles.css       # All styling for the to-do app
+└── script.js        # Business logic and interactivity
+```
 
 ## 🛠️ Usage Instructions
 
@@ -66,5 +64,3 @@ All rights reserved.
 ---
 
 Feel free to use, modify, and expand this project as part of your web development journey!
-
-
